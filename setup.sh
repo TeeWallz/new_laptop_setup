@@ -3,9 +3,16 @@
 curl -Lks https://gist.githubusercontent.com/TeeWallz/0fc9cbfaeeb5a4a0ce9440446174a5ff/raw/4a1b812008bd342f8ab6bf997e414a8f6626d280/install-dotfiles.sh | /bin/bash
 
 pacman -Syyu
-pacman -Syy base-devel i3-gaps feh dmenu i3status code git dbeaver flameshot vlc steam rofi gparted aws-cli
+pacman -Syy base-devel i3-gaps feh dmenu i3status code git dbeaver flameshot vlc steam rofi gparted aws-cli docker
 
 snap install nordpass
+
+groupadd docker
+usermod -aG docker $USER
+newgrp docker
+systemctl start docker
+
+
 
 cd /opt
 git clone https://aur.archlinux.org/yay-git.git

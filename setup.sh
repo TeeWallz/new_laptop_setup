@@ -1,11 +1,11 @@
 #!/bin/bash
 
-curl -Lks https://gist.githubusercontent.com/TeeWallz/0fc9cbfaeeb5a4a0ce9440446174a5ff/raw/4a1b812008bd342f8ab6bf997e414a8f6626d280/install-dotfiles.sh | /bin/bash
+#curl -Lks https://gist.githubusercontent.com/TeeWallz/0fc9cbfaeeb5a4a0ce9440446174a5ff/raw/4a1b812008bd342f8ab6bf997e414a8f6626d280/install-dotfiles.sh | /bin/bash
 
 pacman -Syyu
-pacman -Syy base-devel i3-gaps feh dmenu i3status code git dbeaver flameshot vlc steam rofi gparted aws-cli docker
+pacman -Syy base-devel i3-gaps feh dmenu i3status code git dbeaver flameshot vlc steam rofi gparted aws-cli docker docker-compose
 
-snap install nordpass
+snap install nordpass teams
 
 groupadd docker
 usermod -aG docker $USER
@@ -20,16 +20,16 @@ chown -R tom:tom /opt/yay-git
 cd yay-git
 makepkg -si
 
-yay -S slack-desktop teams teamviewer caprine postman-bin compton-tryone-git oh-my-zsh-git onedrive-abraunegg google-chrome
+yay -S slack-desktop teamviewer caprine postman-bin compton-tryone-git oh-my-zsh-git onedrive-abraunegg google-chrome stax2aws-git-bin
 
-cd /tmp
-git clone https://github.com/DanielBorgesOliveira/onedrive_tray.git
-cd onedrive_tray
-mkdir build
-cd build
-qmake ../systray.pro
-make
-cp onedrive_tray /usr/local/bin/onedrive_tray
+# cd /tmp
+# git clone https://github.com/DanielBorgesOliveira/onedrive_tray.git
+# cd onedrive_tray
+# mkdir build
+# cd build
+# qmake ../systray.pro
+# make
+# cp onedrive_tray /usr/local/bin/onedrive_tray
 #onedrive_tray --onedrive-path [path to onedrive client] --onedrive-args [onedrive client arguments].
 
 
